@@ -29,7 +29,7 @@ def format_string_with_file(string: str, file: str):
 
 class Executor:
 
-    def __init__(self, build_cmd: str, execute_cmd: str) -> None:
+    def __init__(self, build_cmd, execute_cmd: str) -> None:
         '''
         build_cmd: 用于构建可执行程序的命令
         execute_cmd: 用于执行可执行程序的命令
@@ -67,10 +67,18 @@ class Diff:
         self.os = platform.system()
         # 注册执行器
         self.map = {
+            'c': {
+                'Windows': Executor('gcc {file} -o {fileNoExtension}.exe', '{fileNoExtension}.exe'),
+                'Linux': Executor('gcc {file} -o {fileNoExtension}', './{fileNoExtension}')
+            },
             'cpp': {
                 'Windows': Executor('g++ "{file}" -o "{fileNoExtension}.exe"', '{fileNoExtension}.exe'),
                 'Linux': Executor('g++ "{file}" -o "{fileNoExtension}.out"', '{fileNoExtension}.out')
-            }
+            },
+            'py': {
+                'Windows': Executor(None, 'python "{file}"'),
+                'Linux': Executor(None, 'python3 "{file}"')
+            },
         }
 
     def build(self, file: str) -> None:
