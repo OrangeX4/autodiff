@@ -66,7 +66,7 @@ class Diff:
         # 获取当前操作系统类型, Windows 或 Linux
         self.os = platform.system()
         # 注册执行器
-        self.map = {
+        self.executor_map = {
             'c': {
                 'Windows': Executor('gcc {file} -o {fileNoExtension}.exe', '{fileNoExtension}.exe'),
                 'Linux': Executor('gcc {file} -o {fileNoExtension}', './{fileNoExtension}')
@@ -88,7 +88,7 @@ class Diff:
         # 获取文件后缀
         suffix = path.splitext(file)[1][1:]
         # 获取执行器
-        executor = self.map.get(suffix, {}).get(self.os)
+        executor = self.executor_map.get(suffix, {}).get(self.os)
         if executor is None:
             raise Exception('不支持的文件类型')
         executor.build(file)
@@ -99,8 +99,8 @@ class Diff:
         返回 True 表示相等, False 表示不相等
         '''
         # 获取执行器
-        executor1 = self.map.get(path.splitext(file1)[1][1:], {}).get(self.os)
-        executor2 = self.map.get(path.splitext(file2)[1][1:], {}).get(self.os)
+        executor1 = self.executor_map.get(path.splitext(file1)[1][1:], {}).get(self.os)
+        executor2 = self.executor_map.get(path.splitext(file2)[1][1:], {}).get(self.os)
         if executor1 is None or executor2 is None:
             raise Exception('不支持的文件类型')
         # 执行文件
