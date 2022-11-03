@@ -11,7 +11,7 @@ from diff import Diff
 
 class Paracomp:
 
-    def __init__(self, path: str):
+    def __init__(self, path: str, input: Input):
         '''
         并行计算模块, 使用多进程进行并行计算
         cluster = {
@@ -59,7 +59,7 @@ class Paracomp:
         }
         '''
         self.path = path
-        self.input = Input(path)
+        self.input = input
         self.diff = Diff()
         self.proc_num = 8
 
@@ -146,7 +146,7 @@ class Paracomp:
 
 
 def unit_test():
-    paracomp = Paracomp('../data')
+    paracomp = Paracomp('../data', Input('../data'))
     print(paracomp.get_cluster_names())
     paracomp.run('4A')
     print(paracomp.input.clusters['4A'].cluster)
