@@ -1,59 +1,42 @@
-<style>
-h1 {
-    text-align: center;
-}
-h2, h3 {
-    page-break-after: avoid; 
-}
-.center {
-    margin: 0 auto;
-    width: fit-content;
-    margin-top: 2em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    margin-bottom: 2em;
-}
-.title {
-    font-weight: bold;
-    border-top-style: solid;
-    border-bottom-style: solid;
-}
-.newpage {
-    page-break-after: always
-}
-@media print {
-    @page {
-        margin: 3cm;
-    }
-}
-</style>
+# 软件工程实验报告
 
-<h1 style="margin-top: 4em">
-软件工程实验报告
-</h1>
+## 实验四：等价判断
 
-# <h1 class="center title">实验四：等价判断</h1>
+## 目录
 
-<div class="center">
-<h3>院系：人工智能学院</h3>
-<h3>姓名：方盛俊</h3>
-<h3>学号：201300035</h3>
-<h3>班级：人工智能 20 级 2 班</h3>
-<h3>邮箱：201300035@smail.nju.edu.cn</h3>
-<h3>时间：2022 年 11 月 4 日</h3>
-</div>
-
-<div class="newpage"></div>
-
-<!-- 生成目录 -->
-
-## <h1>目录</h1>
-
-[TOC]
-
-<div class="newpage"></div>
-
-<!-- 文章主体内容 -->
+- [软件工程实验报告](#软件工程实验报告)
+    - [实验四：等价判断](#实验四等价判断)
+    - [目录](#目录)
+    - [一、版本控制](#一版本控制)
+        - [1. Git Init](#1-git-init)
+        - [2. 编写 `.gitignore` 文件](#2-编写-gitignore-文件)
+        - [3. Git Add](#3-git-add)
+        - [4. Git Commit](#4-git-commit)
+        - [5. Git Diff](#5-git-diff)
+        - [6. Git Reset](#6-git-reset)
+        - [7. Git Revert](#7-git-revert)
+        - [8. Git Stash](#8-git-stash)
+        - [8. Git Checkout](#8-git-checkout)
+        - [9. Git Merge](#9-git-merge)
+        - [10. Git Rebase](#10-git-rebase)
+        - [11. Git Cherry Pick](#11-git-cherry-pick)
+        - [12. GitHub 远程仓库](#12-github-远程仓库)
+        - [13. 分支合并图](#13-分支合并图)
+    - [二、代码架构](#二代码架构)
+        - [1. 执行比较 (diff)](#1-执行比较-diff)
+        - [2. 生成样例 (generator)](#2-生成样例-generator)
+        - [3. 中间表示与等价类 (cluster)](#3-中间表示与等价类-cluster)
+        - [4. 输入 (input)](#4-输入-input)
+        - [5. 并行多进程计算 (paracomp)](#5-并行多进程计算-paracomp)
+        - [6. 输出 (output)](#6-输出-output)
+    - [三、运行流程](#三运行流程)
+    - [四、优秀设计](#四优秀设计)
+        - [1. 执行模块的扩展性](#1-执行模块的扩展性)
+        - [2. 基于并查集的等价类](#2-基于并查集的等价类)
+        - [3. 测试样例的多样性](#3-测试样例的多样性)
+        - [4. 并行多进程计算](#4-并行多进程计算)
+        - [5. 保存中间状态](#5-保存中间状态)
+        - [6. 为后续的前端界面预留了接口](#6-为后续的前端界面预留了接口)
 
 ## 一、版本控制
 
