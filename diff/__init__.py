@@ -43,7 +43,7 @@ class Executor:
         if cmd is None:
             return
         cmd = format_string_with_file(cmd, file)
-        process = Popen(cmd, stdout=PIPE, stderr=PIPE)
+        process = Popen(cmd, stdout=PIPE, stderr=PIPE, shell=True)
         process.communicate()
 
     def build(self, file: str) -> None:
@@ -98,6 +98,18 @@ class Diff:
         if executor is None:
             raise Exception('不支持的文件类型')
         executor.build(file)
+
+    def clean(self, file: str) -> None:
+        '''
+        清理文件
+        '''
+        # 获取文件后缀
+        suffix = path.splitext(file)[1][1:]
+        # 获取执行器
+        executor = self.executor_map.get(suffix, {}).get(self.os)
+        if executor is None:
+            raise Exception('不支持的文件类型')
+        executor.clean(file)
 
     def diff(self, file1: str, file2: str, input: str, saved_output=None) -> bool:
         '''

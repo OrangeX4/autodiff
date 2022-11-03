@@ -145,6 +145,12 @@ class Paracomp:
                 cluster.set_auto(file1, file2, 'equiv' if res else 'unequiv')
         cluster.update_diff()
 
+        # 清除可执行程序
+        for file in cluster_dict['files']:
+            file_path = os.path.abspath(os.path.join(
+                self.path, 'input', cluster_name, file))
+            self.diff.clean(file_path)
+
 
 def unit_test():
     paracomp = Paracomp('../data', Input('../data'))
