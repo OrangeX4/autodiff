@@ -4,6 +4,7 @@ if __name__ == '__main__':
 import multiprocessing
 import random
 import os
+import json
 from input import Input
 from generator import Generator
 from diff import Diff
@@ -149,8 +150,9 @@ def unit_test():
     paracomp = Paracomp('../data', Input('../data'))
     print(paracomp.get_cluster_names())
     paracomp.run('4A')
-    print(paracomp.input.clusters['4A'].cluster)
+    print(json.dumps(paracomp.input.clusters['4A'].cluster))
 
 
 if __name__ == '__main__':
     unit_test()
+
