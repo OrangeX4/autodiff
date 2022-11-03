@@ -96,7 +96,7 @@ class Cluster:
         for file in self.cluster['files']:
             self.cluster['files'][file]['equiv_class'] = file
 
-    def undo_equiv(self, file1, file2):
+    def undo_equiv(self, file1: str, file2: str):
         '''
         从 equiv 中删除 [file1, file2], 并重新计算 equiv
         '''
@@ -121,7 +121,7 @@ class Cluster:
             new_unequiv.add((self.find(file1), self.find(file2)))
         self.cluster['unequiv'] = list(new_unequiv)
 
-    def undo_unequiv(self, file1, file2):
+    def undo_unequiv(self, file1: str, file2: str):
         '''
         从 unequiv 中删除 [file1, file2]
         '''
@@ -186,7 +186,7 @@ class Cluster:
                     else:
                         self.cluster['diff'][file1][file2]['logic'] = 'unknown'
 
-    def set_manual(self, file1, file2, manual):
+    def set_manual(self, file1: str, file2: str, manual: str):
         '''
         设置 diff 中的 manual
         '''
@@ -211,7 +211,7 @@ class Cluster:
             raise Exception('manual must be equiv, unequiv or unknown')
         self.update_diff()
 
-    def set_auto(self, file1, file2, auto):
+    def set_auto(self, file1: str, file2: str, auto: str):
         '''
         设置 diff 中的 auto
         '''

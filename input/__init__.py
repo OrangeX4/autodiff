@@ -9,7 +9,7 @@ from typing import Dict
 
 class Input:
 
-    def __init__(self, path) -> None:
+    def __init__(self, path: str, from_clusters=False) -> None:
         '''
         cluster = {
             "cluster_name": "4A",
@@ -56,24 +56,30 @@ class Input:
         }
         '''
         self.path = path
+        self.from_clusters = from_clusters
         # 判断是否存在中间文件夹 path/clusters, 有则加载
         clusters_path = os.path.join(path, "clusters")
-        if os.path.exists(clusters_path) and os.path.isdir(clusters_path):
-            self.clusters = self.load_clusters(path)
+        if self.from_clusters:
+            if os.path.exists(clusters_path) and os.path.isdir(clusters_path):
+                self.clusters = self.load_clusters(path)
+            else:
+                # 创建 clusters 文件夹
+                os.mkdir(clusters_path)
+                self.clusters = {}
         else:
-            self.clusters = Input.create_clusters_from_path(path)
+            self.clusters = {}
+        self.clusters = self.create_clusters_from_path(path)
 
     def load_clusters(self, path) -> Dict[str, Cluster]:
-        clusters_path = os.path.join(path, "clusters")
+        clusters_path = os.path.abspath(os.path.join(path, "clusters"))
         clusters: Dict[str, Cluster] = {}
-        for cluster_name in os.listdir(clusters_path):
-            cluster_path = os.path.join(clusters_path, cluster_name)
-            if os.path.isdir(cluster_path):
-                for file_name in os.listdir(cluster_path):
-                    if file_name.endswith(".json"):
-                        file_path = os.path.join(cluster_path, file_name)
-                        cluster = json.loads(open(file_path, "r").read())
-                        clusters[cluster_name] = Cluster(path, cluster)
+        for cluster_file in os.listdir(clusters_path):
+            cluster_path = os.path.join(clusters_path, cluster_file)
+            cluster_name = cluster_file.split('.')[0]
+            if os.path.isfile(cluster_path):
+                cluster = json.loads(open(cluster_path, "r").read())
+                cluster['is_loaded'] = True
+                clusters[cluster_name] = Cluster(path, cluster)
         return clusters
 
     @staticmethod
@@ -83,6 +89,7 @@ class Input:
         '''
         return {
             "cluster_name": '',
+            "is_loaded": False,
             "random_input_generator": {
                 "type": "empty"
             },
@@ -142,15 +149,16 @@ class Input:
         _cluster.clear()
         return _cluster
 
-    @staticmethod
-    def create_clusters_from_path(path: str) -> Dict[str, Cluster]:
+    def create_clusters_from_path(self, path: str) -> Dict[str, Cluster]:
         '''
         从 path 创建 cluster
         '''
-        clusters: Dict[str, Cluster] = {}
+        clusters: Dict[str, Cluster] = self.clusters
         # 绝对路径
         input_path = os.path.abspath(os.path.join(path, 'input'))
         for cluster_name in os.listdir(input_path):
+            if cluster_name in self.clusters:
+                continue
             cluster_path = os.path.join(input_path, cluster_name)
             if os.path.isdir(cluster_path):
                 clusters[cluster_name] = Input.create_cluster_from_path(
