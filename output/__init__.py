@@ -3,12 +3,12 @@ import os
 from typing import Dict
 from cluster import Cluster
 
+
 class Output:
 
     def __init__(self, path: str, clusters: Dict[str, Cluster]) -> None:
         self.path = path
         self.clusters = clusters
-        
 
     def save_clusters(self) -> None:
         '''
@@ -18,7 +18,8 @@ class Output:
         # 对 clusters 里的每个 cluster 保存一个 json
         for cluster_name in self.clusters:
             cluster = self.clusters[cluster_name]
-            cluster_json_path = os.path.join(clusters_path, cluster_name + '.json')
+            cluster_json_path = os.path.join(
+                clusters_path, cluster_name + '.json')
             with open(cluster_json_path, 'w') as f:
                 f.write(json.dumps(cluster.cluster, indent=4))
 
@@ -50,6 +51,33 @@ class Output:
                         })
         return diff_list
 
+    def cluster_to_diff_list(self, cluster_name: str) -> list:
+        '''
+        将 clusters 转换为 diff_list, 其中 list 中每个元素为 (file1 < file2)
+        {
+            "cluster_name": cluster_name,
+            "file1": file1,
+            "file2": file2,
+            "auto": auto,
+            "manual": manual,
+            "logic": logic
+        }
+        '''
+        diff_list = []
+        cluster_dict = self.clusters[cluster_name].cluster
+        for file1 in cluster_dict["files"]:
+            for file2 in cluster_dict["files"]:
+                if file1 < file2:
+                    diff_list.append({
+                        "cluster_name": cluster_name,
+                        "file1": file1,
+                        "file2": file2,
+                        "auto": cluster_dict["diff"][file1][file2]["auto"],
+                        "manual": cluster_dict["diff"][file1][file2]["manual"],
+                        "logic": cluster_dict["diff"][file1][file2]["logic"]
+                    })
+        return diff_list
+
     def save_diff_list_to_csv(self) -> None:
         '''
         保存到 path/output/equal.csv 和 path/output/inequal.csv
@@ -57,8 +85,10 @@ class Output:
         其中是否 equal 只取决于 auto == 'equiv' 与 auto == 'unequiv'
         '''
         diff_list = self.clusters_to_diff_list()
-        equal_csv_path = os.path.abspath(os.path.join(self.path, "output", "equal.csv"))
-        inequal_csv_path = os.path.abspath(os.path.join(self.path, "output", "inequal.csv"))
+        equal_csv_path = os.path.abspath(
+            os.path.join(self.path, "output", "equal.csv"))
+        inequal_csv_path = os.path.abspath(
+            os.path.join(self.path, "output", "inequal.csv"))
         equal_csv_content = "file1,file2"
         inequal_csv_content = "file1,file2"
         for diff in diff_list:
