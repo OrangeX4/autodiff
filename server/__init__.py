@@ -2,6 +2,7 @@ if __name__ == '__main__':
     import sys
     sys.path.append("..")
 from flask import Flask, request
+import webbrowser
 from typing import Dict
 from input import Input
 from output import Output
@@ -9,7 +10,9 @@ from paracomp import Paracomp
 from cluster import Cluster
 
 # Flask
-app = Flask(__name__)
+app = Flask(__name__,
+            static_url_path='',
+            static_folder='static')
 # data 路径
 path = "../data"
 
@@ -20,6 +23,10 @@ input = Input(path, from_clusters=True)
 clusters: Dict[str, Cluster] = input.clusters
 # 输出模块
 output = Output(path, clusters)
+
+# 打开网页 http://localhost:7376/
+if __name__ == '__main__':
+    webbrowser.open('http://localhost:7376/')
 
 
 def get_cluster(cluster_name) -> Dict:
@@ -52,7 +59,7 @@ def after_request(resp):
 
 @app.route("/")
 def handle_root():
-    return "<p>backend of autodiff</p>"
+    return app.send_static_file('index.html')
 
 
 @app.route("/clusters", methods=['GET'])
