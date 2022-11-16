@@ -63,55 +63,107 @@
     "equiv": [],
     "unequiv": [
         [
-            "142890373.cpp",
-            "29019948.cpp"
-        ],
-        [
-            "142890373.cpp",
-            "45851050.cpp"
-        ],
-        [
-            "138805414.cpp",
-            "29019948.cpp"
-        ],
-        [
-            "21508898.cpp",
+            "21508887.cpp",
             "30534178.cpp"
         ],
         [
             "142890373.cpp",
             "21508898.cpp"
-        ],
-        [
-            "138805414.cpp",
-            "45851050.cpp"
-        ],
-        [
-            "29019948.cpp",
-            "30534178.cpp"
-        ],
-        [
-            "142890373.cpp",
-            "21508887.cpp"
         ],
         [
             "30534178.cpp",
             "33794240.cpp"
         ],
         [
+            "142890373.cpp",
+            "33794240.cpp"
+        ],
+        [
             "138805414.cpp",
-            "21508898.cpp"
+            "31034693.cpp"
+        ],
+        [
+            "164831265.cpp",
+            "45851050.cpp"
         ],
         [
             "21508898.cpp",
             "45851050.cpp"
         ],
         [
+            "21715601.cpp",
+            "45851050.cpp"
+        ],
+        [
+            "142890373.cpp",
+            "164831265.cpp"
+        ],
+        [
             "138805414.cpp",
-            "21508887.cpp"
+            "21508898.cpp"
+        ],
+        [
+            "30534178.cpp",
+            "36641065.cpp"
+        ],
+        [
+            "138805414.cpp",
+            "33794240.cpp"
+        ],
+        [
+            "142890373.cpp",
+            "36641065.cpp"
+        ],
+        [
+            "142890373.cpp",
+            "29019948.cpp"
+        ],
+        [
+            "31034693.cpp",
+            "45851050.cpp"
         ],
         [
             "29019948.cpp",
+            "45851050.cpp"
+        ],
+        [
+            "30534178.cpp",
+            "45851050.cpp"
+        ],
+        [
+            "142890373.cpp",
+            "45851050.cpp"
+        ],
+        [
+            "138805414.cpp",
+            "164831265.cpp"
+        ],
+        [
+            "142890373.cpp",
+            "21508887.cpp"
+        ],
+        [
+            "21508887.cpp",
+            "45851050.cpp"
+        ],
+        [
+            "138805414.cpp",
+            "36641065.cpp"
+        ],
+        [
+            "164831265.cpp",
+            "30534178.cpp"
+        ],
+        [
+            "138805414.cpp",
+            "29019948.cpp"
+        ],
+        [
+            "21508898.cpp",
+            "30534178.cpp"
+        ],
+        [
+            "36641065.cpp",
             "45851050.cpp"
         ],
         [
@@ -119,24 +171,12 @@
             "45851050.cpp"
         ],
         [
-            "30534178.cpp",
-            "36641065.cpp"
-        ],
-        [
-            "142890373.cpp",
-            "33794240.cpp"
-        ],
-        [
-            "142890373.cpp",
-            "164831265.cpp"
+            "21715601.cpp",
+            "30534178.cpp"
         ],
         [
             "138805414.cpp",
-            "33794240.cpp"
-        ],
-        [
-            "30534178.cpp",
-            "31034693.cpp"
+            "45851050.cpp"
         ],
         [
             "142890373.cpp",
@@ -144,63 +184,23 @@
         ],
         [
             "138805414.cpp",
-            "164831265.cpp"
+            "21508887.cpp"
         ],
         [
-            "21508887.cpp",
+            "30534178.cpp",
+            "31034693.cpp"
+        ],
+        [
+            "142890373.cpp",
+            "31034693.cpp"
+        ],
+        [
+            "29019948.cpp",
             "30534178.cpp"
         ],
         [
             "138805414.cpp",
             "21715601.cpp"
-        ],
-        [
-            "142890373.cpp",
-            "36641065.cpp"
-        ],
-        [
-            "36641065.cpp",
-            "45851050.cpp"
-        ],
-        [
-            "21508887.cpp",
-            "45851050.cpp"
-        ],
-        [
-            "138805414.cpp",
-            "36641065.cpp"
-        ],
-        [
-            "164831265.cpp",
-            "30534178.cpp"
-        ],
-        [
-            "21715601.cpp",
-            "30534178.cpp"
-        ],
-        [
-            "30534178.cpp",
-            "45851050.cpp"
-        ],
-        [
-            "142890373.cpp",
-            "31034693.cpp"
-        ],
-        [
-            "164831265.cpp",
-            "45851050.cpp"
-        ],
-        [
-            "138805414.cpp",
-            "31034693.cpp"
-        ],
-        [
-            "21715601.cpp",
-            "45851050.cpp"
-        ],
-        [
-            "31034693.cpp",
-            "45851050.cpp"
         ]
     ],
     "diff": {
@@ -888,5 +888,535 @@
                 "logic": "unequiv"
             }
         }
-    }
+    },
+    "diff_list": [
+        {
+            "cluster_name": "50A",
+            "file1": "138805414.cpp",
+            "file2": "142890373.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "138805414.cpp",
+            "file2": "164831265.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "138805414.cpp",
+            "file2": "21508887.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "138805414.cpp",
+            "file2": "21508898.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "138805414.cpp",
+            "file2": "21715601.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "138805414.cpp",
+            "file2": "29019948.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "138805414.cpp",
+            "file2": "30534178.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "138805414.cpp",
+            "file2": "31034693.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "138805414.cpp",
+            "file2": "33794240.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "138805414.cpp",
+            "file2": "36641065.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "138805414.cpp",
+            "file2": "45851050.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "142890373.cpp",
+            "file2": "164831265.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "142890373.cpp",
+            "file2": "21508887.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "142890373.cpp",
+            "file2": "21508898.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "142890373.cpp",
+            "file2": "21715601.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "142890373.cpp",
+            "file2": "29019948.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "142890373.cpp",
+            "file2": "30534178.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "142890373.cpp",
+            "file2": "31034693.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "142890373.cpp",
+            "file2": "33794240.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "142890373.cpp",
+            "file2": "36641065.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "142890373.cpp",
+            "file2": "45851050.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "164831265.cpp",
+            "file2": "21508887.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "164831265.cpp",
+            "file2": "21508898.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "164831265.cpp",
+            "file2": "21715601.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "164831265.cpp",
+            "file2": "29019948.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "164831265.cpp",
+            "file2": "30534178.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "164831265.cpp",
+            "file2": "31034693.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "164831265.cpp",
+            "file2": "33794240.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "164831265.cpp",
+            "file2": "36641065.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "164831265.cpp",
+            "file2": "45851050.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21508887.cpp",
+            "file2": "21508898.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21508887.cpp",
+            "file2": "21715601.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21508887.cpp",
+            "file2": "29019948.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21508887.cpp",
+            "file2": "30534178.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21508887.cpp",
+            "file2": "31034693.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21508887.cpp",
+            "file2": "33794240.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21508887.cpp",
+            "file2": "36641065.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21508887.cpp",
+            "file2": "45851050.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21508898.cpp",
+            "file2": "21715601.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21508898.cpp",
+            "file2": "29019948.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21508898.cpp",
+            "file2": "30534178.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21508898.cpp",
+            "file2": "31034693.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21508898.cpp",
+            "file2": "33794240.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21508898.cpp",
+            "file2": "36641065.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21508898.cpp",
+            "file2": "45851050.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21715601.cpp",
+            "file2": "29019948.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21715601.cpp",
+            "file2": "30534178.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21715601.cpp",
+            "file2": "31034693.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21715601.cpp",
+            "file2": "33794240.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21715601.cpp",
+            "file2": "36641065.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "21715601.cpp",
+            "file2": "45851050.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "29019948.cpp",
+            "file2": "30534178.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "29019948.cpp",
+            "file2": "31034693.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "29019948.cpp",
+            "file2": "33794240.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "29019948.cpp",
+            "file2": "36641065.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "29019948.cpp",
+            "file2": "45851050.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "30534178.cpp",
+            "file2": "31034693.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "30534178.cpp",
+            "file2": "33794240.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "30534178.cpp",
+            "file2": "36641065.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "30534178.cpp",
+            "file2": "45851050.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "31034693.cpp",
+            "file2": "33794240.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "31034693.cpp",
+            "file2": "36641065.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "31034693.cpp",
+            "file2": "45851050.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "33794240.cpp",
+            "file2": "36641065.cpp",
+            "auto": "equiv",
+            "manual": "unknown",
+            "logic": "unknown"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "33794240.cpp",
+            "file2": "45851050.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        },
+        {
+            "cluster_name": "50A",
+            "file1": "36641065.cpp",
+            "file2": "45851050.cpp",
+            "auto": "unequiv",
+            "manual": "unknown",
+            "logic": "unequiv"
+        }
+    ]
 }
