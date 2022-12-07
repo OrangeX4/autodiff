@@ -52,10 +52,10 @@ class Executor:
     def clean(self, file: str) -> None:
         self._exec(file, self.clean_cmd)
 
-    def execute(self, file: str, input: str) -> str:
+    def execute(self, file: str, _input: str) -> str:
         cmd = format_string_with_file(self.execute_cmd, file)
         process = Popen(cmd, stdout=PIPE, stderr=PIPE, stdin=PIPE)
-        output, err = process.communicate(input=input.encode())
+        output, err = process.communicate(input=_input.encode())
         if err:
             # raise Exception(err.decode())
             return err.decode()
@@ -74,12 +74,20 @@ class Diff:
         # 注册执行器
         self.executor_map = {
             'c': {
-                'Windows': Executor('{fileNoExtension}.exe', 'gcc {file} -o "{fileNoExtension}.exe"', 'del "{fileNoExtension}.exe"'),
-                'Linux': Executor('./{fileNoExtension}.out', 'gcc {file} -o "{fileNoExtension}.out"', 'rm "{fileNoExtension}.out"')
+                'Windows': Executor('{fileNoExtension}.exe',
+                    'gcc {file} -o "{fileNoExtension}.exe"',
+                    'del "{fileNoExtension}.exe"'),
+                'Linux': Executor('./{fileNoExtension}.out',
+                    'gcc {file} -o "{fileNoExtension}.out"',
+                    'rm "{fileNoExtension}.out"')
             },
             'cpp': {
-                'Windows': Executor('{fileNoExtension}.exe', 'g++ "{file}" -o "{fileNoExtension}.exe"', 'del "{fileNoExtension}.exe"'),
-                'Linux': Executor('{fileNoExtension}.out', 'g++ "{file}" -o "{fileNoExtension}.out"', 'rm "{fileNoExtension}.out"')
+                'Windows': Executor('{fileNoExtension}.exe',
+                    'g++ "{file}" -o "{fileNoExtension}.exe"',
+                    'del "{fileNoExtension}.exe"'),
+                'Linux': Executor('{fileNoExtension}.out',
+                    'g++ "{file}" -o "{fileNoExtension}.out"',
+                    'rm "{fileNoExtension}.out"')
             },
             'py': {
                 'Windows': Executor('python "{file}"'),
@@ -111,19 +119,21 @@ class Diff:
             raise Exception('不支持的文件类型')
         executor.clean(file)
 
-    def diff(self, file1: str, file2: str, input: str, saved_output=None) -> bool:
+    def diff(self, file1: str, file2: str, _input: str, saved_output=None) -> bool:
         '''
         对两个文件使用同一个输出 (需要事先生成可执行文件), 判断它们的输出是否相等
         返回 True 表示相等, False 表示不相等
         '''
         # 获取执行器
-        executor1 = self.executor_map.get(path.splitext(file1)[1][1:], {}).get(self.os)
-        executor2 = self.executor_map.get(path.splitext(file2)[1][1:], {}).get(self.os)
+        executor1 = self.executor_map.get(
+            path.splitext(file1)[1][1:], {}).get(self.os)
+        executor2 = self.executor_map.get(
+            path.splitext(file2)[1][1:], {}).get(self.os)
         if executor1 is None or executor2 is None:
             raise Exception('不支持的文件类型')
         # 执行文件
-        output1 = executor1.execute(file1, input)
-        output2 = executor2.execute(file2, input)
+        output1 = executor1.execute(file1, _input)
+        output2 = executor2.execute(file2, _input)
         # 保存输出
         if saved_output is not None and isinstance(saved_output, dict):
             saved_output[file1] = output1
@@ -136,12 +146,12 @@ def unit_test():
     diff = Diff()
     file1 = '../data/input/4A/48762087.cpp'
     file2 = '../data/input/4A/84822638.cpp'
-    input = '2'
+    _input = '2'
     diff.build(file1)
     diff.build(file2)
     output = {}
-    result = diff.diff(file1, file2, input, output)
-    print('input:', input)
+    result = diff.diff(file1, file2, _input, output)
+    print('input:', _input)
     print('output:', output)
     print('result:', result)
 

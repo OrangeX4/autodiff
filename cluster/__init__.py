@@ -102,11 +102,11 @@ class Cluster:
         '''
         try:
             self.cluster['equiv'].remove([file1, file2])
-        except:
+        except ValueError:
             pass
         try:
             self.cluster['equiv'].remove([file2, file1])
-        except:
+        except ValueError:
             pass
         self.clear_equiv_class()
         for file1, file2 in self.cluster['equiv']:
@@ -127,21 +127,21 @@ class Cluster:
         '''
         try:
             self.cluster['unequiv'].remove((file1, file2))
-        except:
+        except ValueError:
             pass
         try:
             self.cluster['unequiv'].remove((file2, file1))
-        except:
+        except ValueError:
             pass
         root1 = self.find(file1)
         root2 = self.find(file2)
         try:
             self.cluster['unequiv'].remove((root1, root2))
-        except:
+        except ValueError:
             pass
         try:
             self.cluster['unequiv'].remove((root2, root1))
-        except:
+        except ValueError:
             pass
 
     def clear(self):
@@ -208,7 +208,7 @@ class Cluster:
             elif old_manual == 'unequiv':
                 self.undo_unequiv(file1, file2)
         else:
-            raise Exception('manual must be equiv, unequiv or unknown')
+            raise ValueError('manual must be equiv, unequiv or unknown')
         self.update_diff()
 
     def set_auto(self, file1: str, file2: str, auto: str):
